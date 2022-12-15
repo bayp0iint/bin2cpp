@@ -68,7 +68,7 @@ parse_options(const vector<string>& args) {
 
     //Parse Arguments
     string curr_opt;
-    bool verbose;
+    bool verbose = false;
     for(auto arg : args) {
         if(arg == "--verbose") {
             verbose = true;
