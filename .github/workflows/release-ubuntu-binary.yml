@@ -1,0 +1,19 @@
+name: Build Linux Binary
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Compile
+      run: clang++ -O3 -fuse-ld=lld -static bin2cpp.cpp -o bin2cpp
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: bin2cpp
