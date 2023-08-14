@@ -15,5 +15,6 @@ jobs:
       run: clang++ -O3 -fuse-ld=lld -static bin2cpp.cpp -o bin2cpp
     - name: Release
       uses: softprops/action-gh-release@v1
+      tag: release-1
       with:
         files: bin2cpp
